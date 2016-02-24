@@ -1,4 +1,4 @@
-TRIVIA GAME     (BRONZE)  (MONDAY)
+(BRONZE)  
 
 - Game will be called CLOUD TRIVIA  [x]
 
@@ -13,22 +13,22 @@ TRIVIA GAME     (BRONZE)  (MONDAY)
 - Go to five questions [x]
 
 
-
 (SILVER)
 
 
-- build correct and incorrect answer increment [x]
+- build correct and incorrect answer on page and increment [x]
 
-- use while loop to end game for win and lost option []
+- restart game button [x]
 
 - better layout [x]
 
-- create a div and when a user gets it right, append div with correct then switch to next question []
-
+- create a div and when a user gets it right, append div with correct then switch to next question [x]
 
 
 (GOLD)
 
-play game without refresh []
+- button for true and false
 
-shorthand code everything []
+- if statement for winner or loser with 3
+
+- shorthand code everything []

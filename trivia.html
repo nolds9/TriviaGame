@@ -2,27 +2,33 @@
 <html lang="en">
    <head>
       <meta charset="utf-8" />
-      <title>Trivia Island</title>
+      <title>Trivia Paradise</title>
       <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
       <link rel="stylesheet" href="bootstrap.css">
       <link rel="stylesheet" href="trivia.css">
       <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
    </head>
    <body>
-      <div class="container">
-         <header class="row">
-            <div class="col-xs-12">
-               <img class="img-responsive center-block" alt="Trivia" src="http://www.townsquaretavern.com/wp-content/uploads/2013/06/TRIVIA.gif">
-               <audio controls class="one">
-                  <source src="Gandalf - Rhythm of the tides (new age music).mp3" type="audio/ogg">
-               </audio>
+      <div class="container-fluid">
+         <header class="row jumbotron">
+           <div class="col-xs-4">
+             <h2>Correct</h2>
+<h2 id ="correctguess"></h1>
+           </div>
+            <div class="col-xs-4">
+              <h1 id="Trivia">Trivia Game</h1>
+              <button id="restart">Restart</button>
+            </div>
+            <div class="col-xs-4">
+              <h2>Incorrect</h2>
+ <h2 id ="incorrectguess"></h1>
             </div>
          </header>
       </div>
       <div class="container">
          <section class="row">
             <div class="col-xs-12">
-                  <h1 id="question1">Is The Sky Blue?</h1>
+                  <h3 id="question1"></h3>
                 <center>  <button class="myButton" id ="firstoption"></button> </center>
                   </div>
             </div>
