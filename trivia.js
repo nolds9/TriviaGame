@@ -1,60 +1,57 @@
-var correct = 0;
-var incorrect = 0;
+
 
 $(document).ready(function(){
 
- $("#correctguess").text(correct).css("color" , "blue");
- $("#incorrectguess").text(incorrect).css("color" , "red");
+ $("#firstoption").text("Click Here");
+ $("#correctguess").css("color" , "blue");
+ $("#incorrectguess").css("color" , "darkred");
+ $("#question1").css("color" , "blue");
 
+ var correct = 0;
+ var incorrect = 0;
+ $("#correctguess").text(correct);
+ $("#incorrectguess").text(incorrect);
 
 
 function firstquestion(){
 
-$("#question1").css("color" , "black").text("Is The Sky Blue?");
-$("#firstoption").text("Truth Button").on('click.first' , function(){
-var right = prompt("Type YES or NO").toLowerCase();
+$("#question1").text("Is The Sky Blue?");
+$("#firstoption").on('click.first' , function(){
+var right = prompt("Type yes or no").toLowerCase();
 if(right == "yes"){
   alert("Correct!");
-  correct = correct + 2;
-  $("#correctguess").text(correct).css("color" , "blue");
+  correct++;
+  $("#correctguess").text(correct);
   secondquestion();
 }
 else if(right == "no"){
   alert("Incorrect!");
-  incorrect = incorrect - 2;
-  $("#incorrectguess").text(incorrect).css("color" , "red");
+  incorrect++;
+  $("#incorrectguess").text(incorrect);
   secondquestion();
 }
-else{
-alert("Enter correct value");
-}
 });
-
 }
 
 
 
 
 function secondquestion(){
-  $("#question1").css("color" , "gray").text("Cats Sleep 16 to 18 hours a day?");
-  // remove the firstquesiton click event
 
+  $("#question1").text("Cats Sleep 16 to 18 hours a day?");
   $("#firstoption").off('click.first').on('click.second' ,function(){
-    var right = prompt("Type TRUE or FALSE").toLowerCase();
-    if(right == "true"){
+    var right = prompt("Type yes or no").toLowerCase();
+    if(right == "yes"){
       alert("Correct");
       correct++;
-    $("#correctguess").text(correct).css("color" , "blue");
+    $("#correctguess").text(correct);
       thirdquestion();
     }
-    else if(right == "false"){
+    else if(right == "no"){
       alert("Incorrect!");
-      incorrect - 2;
-      $("#incorrectguess").text(incorrect).css("color" , "red");
+      incorrect++;
+      $("#incorrectguess").text(incorrect)
       thirdquestion();
-    }
-    else{
-      alert("Enter Correct value");
     }
   });
 }
@@ -63,26 +60,29 @@ function secondquestion(){
 
 function thirdquestion(){
 
-  alert("Gold Round! If You Answer Correctly, You Will Gain +2 Or Lose -2")
-
-$("#question1").css("color" , "gold").text("1 in 5,000 north Atlantic lobsters are born bright blue");
+$("#question1").text("1 in 5,000 north Atlantic lobsters are born bright blue");
 
 $("#firstoption").off('click.first').off('click.second').on('click.third' ,function(){
-  var right = prompt("Type TRUE or FALSE").toLowerCase();
-  if(right == "true" || right == "TRUE"){
+  var right = prompt("Type yes or no").toLowerCase();
+  if(right == "yes"){
     alert("Correct");
-    correct = correct + 2
-    $("#correctguess").text(correct).css("color" , "gold");
+    correct = correct + 2;
+    $("#correctguess").text(correct);
     fourthquestion();
   }
-  else if(right == "false"){
+  if(correct > 2){
+    alert("You Win! Game Over");
+    restart();
+  }
+  else if(right == "no"){
     alert("Incorrect!");
-    incorrect = incorrect - 2;
-    $("#incorrectguess").text(incorrect).css("color" , "darkred");
+    incorrect = incorrect + 2;
+    $("#incorrectguess").text(incorrect);
     fourthquestion();
   }
-  else{
-    alert("Enter Correct value");
+  if(incorrect > 2){
+    alert("You Lose! Game Over");
+    restart();
   }
 });
 
@@ -90,47 +90,58 @@ $("#firstoption").off('click.first').off('click.second').on('click.third' ,funct
 
 function fourthquestion(){
 
-$("#question1").css("color" , "gray").text("Coke was invented in 1982");
+$("#question1").text("Coke was invented in 1982");
 
 $("#firstoption").off('click.first').off('click.second').off('click.third').on('click.fourth' ,function(){
-  var right = prompt("Type TRUE or FALSE").toLowerCase();
-  if(right == "true" || right == "TRUE"){
+  var right = prompt("Type yes or no").toLowerCase();
+  if(right == "yes"){
     alert("Correct");
     correct++
-    $("#correctguess").text(correct).css("color" , "blue");
+    $("#correctguess").text(correct);
   }
-  else if(right == "false" || "FALSE"){
+  if(correct > 2){
+    alert("You Win! Game Over");
+    restart();
+  }
+
+  else if(right == "no"){
     alert("Incorrect!");
     incorrect++
-    $("#incorrectguess").text(incorrect).css("color" , "red");
-  }
-  else{
-    alert("Enter Correct value");
+    $("#incorrectguess").text(incorrect);
+    }
+    if(incorrect > 2){
+      alert("You Lose! Game Over");
+      restart();
   }
 });
 
 }
 
-
-
+// function endgame(){
+// if(correct > 1){
+//   alert("Game Over");
+// }
+// else{
+//   firstquestion();
+// }
+// }
+//
+// endgame()
 
 
 function restart(){
-
-$("#restart").on("click" , function(){
 
 correct = 0;
 incorrect = 0;
 $("#correctguess").text(correct).css("color" , "blue");
 $("#incorrectguess").text(incorrect).css("color" , "red");
-
-
-})
-
-}
-
-
 firstquestion();
 
 
-});
+}
+firstquestion();
+})
+
+//
+// restart();
+// endgame();
