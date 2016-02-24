@@ -15,13 +15,13 @@ $("#firstoption").text("Truth Button").on('click.first' , function(){
 var right = prompt("Type YES or NO").toLowerCase();
 if(right == "yes"){
   alert("Correct!");
-  correct++;
+  correct = correct + 2;
   $("#correctguess").text(correct).css("color" , "blue");
   secondquestion();
 }
 else if(right == "no"){
   alert("Incorrect!");
-  incorrect++;
+  incorrect = incorrect - 2;
   $("#incorrectguess").text(incorrect).css("color" , "red");
   secondquestion();
 }
@@ -29,6 +29,7 @@ else{
 alert("Enter correct value");
 }
 });
+
 }
 
 
@@ -48,7 +49,7 @@ function secondquestion(){
     }
     else if(right == "false"){
       alert("Incorrect!");
-      incorrect++;
+      incorrect - 2;
       $("#incorrectguess").text(incorrect).css("color" , "red");
       thirdquestion();
     }
@@ -61,6 +62,7 @@ function secondquestion(){
 
 
 function thirdquestion(){
+
   alert("Gold Round! If You Answer Correctly, You Will Gain +2 Or Lose -2")
 
 $("#question1").css("color" , "gold").text("1 in 5,000 north Atlantic lobsters are born bright blue");
@@ -73,7 +75,7 @@ $("#firstoption").off('click.first').off('click.second').on('click.third' ,funct
     $("#correctguess").text(correct).css("color" , "gold");
     fourthquestion();
   }
-  else if(right == "false" || "FALSE"){
+  else if(right == "false"){
     alert("Incorrect!");
     incorrect = incorrect - 2;
     $("#incorrectguess").text(incorrect).css("color" , "darkred");
@@ -108,12 +110,6 @@ $("#firstoption").off('click.first').off('click.second').off('click.third').on('
 });
 
 }
-//
-// while(correct == 2){
-//
-//    alert("Game Over, You Win");
-//
-// }
 
 
 
@@ -127,13 +123,14 @@ correct = 0;
 incorrect = 0;
 $("#correctguess").text(correct).css("color" , "blue");
 $("#incorrectguess").text(incorrect).css("color" , "red");
-firstquestion();
+
 
 })
 
 }
 
-restart();
+
 firstquestion();
+
 
 });
