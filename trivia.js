@@ -60,7 +60,9 @@ function secondquestion(){
 
 function thirdquestion(){
 
-$("#question1").text("1 in 5,000 north Atlantic lobsters are born bright blue");
+  alert("Bonus Round! +2 Points");
+
+$("#question1").text("1 in 5,000 north Atlantic lobsters are born bright blue").css('color' , 'gold');
 
 $("#firstoption").off('click.first').off('click.second').on('click.third' ,function(){
   var right = prompt("Type yes or no").toLowerCase();
@@ -95,22 +97,22 @@ $("#question1").text("Coke was invented in 1982");
 $("#firstoption").off('click.first').off('click.second').off('click.third').on('click.fourth' ,function(){
   var right = prompt("Type yes or no").toLowerCase();
   if(right == "yes"){
-    alert("Correct");
-    correct++
-    $("#correctguess").text(correct);
+    alert("incorrect");
+    incorrect++
+    $("#incorrectguess").text(incorrect);
   }
-  if(correct > 2){
-    alert("You Win! Game Over");
+  if(incorrect > 2){
+    alert("You Lose! Game Over");
     restart();
   }
 
   else if(right == "no"){
-    alert("Incorrect!");
-    incorrect++
-    $("#incorrectguess").text(incorrect);
+    alert("Correct!");
+    correct++
+    $("#correctguess").text(correct);
     }
-    if(incorrect > 2){
-      alert("You Lose! Game Over");
+    if(correct > 2){
+      alert("You Win! Game Over");
       restart();
   }
 });
@@ -137,9 +139,10 @@ $("#correctguess").text(correct).css("color" , "blue");
 $("#incorrectguess").text(incorrect).css("color" , "red");
 firstquestion();
 
-
 }
+restart();
 firstquestion();
+
 })
 
 //
