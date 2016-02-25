@@ -2,7 +2,7 @@
 
 $(document).ready(function(){
 
- $("#firstoption").text("Click Here");
+ $("#firstoption").text("Answer");
  $("#correctguess").css("color" , "blue");
  $("#incorrectguess").css("color" , "darkred");
  $("#question1").css("color" , "blue");
@@ -119,18 +119,6 @@ $("#firstoption").off('click.first').off('click.second').off('click.third').on('
 
 }
 
-// function endgame(){
-// if(correct > 1){
-//   alert("Game Over");
-// }
-// else{
-//   firstquestion();
-// }
-// }
-//
-// endgame()
-
-
 function restart(){
 
 correct = 0;
@@ -144,7 +132,3 @@ restart();
 firstquestion();
 
 })
-
-//
-// restart();
-// endgame();
