@@ -4,7 +4,7 @@ $(document).ready(function(){
 
  $("#firstoption").text("Answer");
  $("#correctguess").css("color" , "blue");
- $("#incorrectguess").css("color" , "darkred");
+ $("#incorrectguess").css("color" , "red");
  $("#question1").css("color" , "blue");
 
  var correct = 0;
@@ -17,7 +17,7 @@ function firstquestion(){
 
 $("#question1").text("Is The Sky Blue?");
 $("#firstoption").on('click.first' , function(){
-var right = prompt("Type yes or no").toLowerCase();
+var right = prompt("Type yes 5 or no").toLowerCase();
 if(right == "yes"){
   alert("Correct!");
   correct++;
@@ -92,7 +92,7 @@ $("#firstoption").off('click.first').off('click.second').on('click.third' ,funct
 
 function fourthquestion(){
 
-$("#question1").text("Coke was invented in 1982");
+$("#question1").text("Coke was invented in 1982").css('color' , 'blue');
 
 $("#firstoption").off('click.first').off('click.second').off('click.third').on('click.fourth' ,function(){
   var right = prompt("Type yes or no").toLowerCase();
@@ -128,7 +128,7 @@ $("#incorrectguess").text(incorrect).css("color" , "red");
 firstquestion();
 
 }
-restart();
+
 firstquestion();
 
 })
