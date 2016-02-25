@@ -60,7 +60,7 @@ function secondquestion(){
 
 function thirdquestion(){
 
-  alert("Bonus Round! +2 Points");
+  alert("Bonus Round! Earn +2 Points");
 
 $("#question1").text("1 in 5,000 north Atlantic lobsters are born bright blue").css('color' , 'gold');
 
