@@ -92,10 +92,14 @@ $("#firstoption").off('click.first').off('click.second').on('click.third' ,funct
 
 function fourthquestion(){
 
+<<<<<<< HEAD
 $("#question1").text("Coke was invented in 1982").css('color' , 'blue');
+=======
+$("#question1").text("Coke was not invented in 1982");
+>>>>>>> b1365a75bdf8fe2cb35d131c2ca7ade1574c5e40
 
 $("#firstoption").off('click.first').off('click.second').off('click.third').on('click.fourth' ,function(){
-  var right = prompt("Type yes or no").toLowerCase();
+  var right = prompt("Type yes 4 or no").toLowerCase();
   if(right == "yes"){
     alert("incorrect");
     incorrect++
