@@ -92,7 +92,7 @@ $("#firstoption").off('click.first').off('click.second').on('click.third' ,funct
 
 function fourthquestion(){
 
-$("#question1").text("Coke was invented in 1982");
+$("#question1").text("Coke was not invented in 1982");
 
 $("#firstoption").off('click.first').off('click.second').off('click.third').on('click.fourth' ,function(){
   var right = prompt("Type yes 4 or no").toLowerCase();
