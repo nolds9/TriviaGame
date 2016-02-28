@@ -132,6 +132,19 @@
 
     }
 
+    $("#restart").click(function(){
+
+      correct = 0;
+      incorrect = 0;
+      $("#correctguess").text(correct).css("color" , "blue");
+      $("#incorrectguess").text(incorrect).css("color" , "red");
+      $("#question1").css("color" , "blue");
+      $("#firstoption").off('click.second').off('click.third').off('click.fourth');
+      firstquestion();
+
+    })
+
+
     firstquestion();
 
     })
