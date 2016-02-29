@@ -1,43 +1,45 @@
-      <!doctype html>
-      <html lang="en">
-      <head>
-      <meta charset="utf-8" />
-      <title>Trivia Paradise</title>
-      <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
-      <link rel="stylesheet" href="bootstrap.css">
-      <link rel="stylesheet" href="trivia.css">
-      <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
-      </head>
-      <body>
-      <div class="container-fluid">
-        <header class="row jumbotron topspot">
-          <div class="col-xs-4">
-            <h1 id="scoreboard">Correct</h1>
-            <h1 id ="correctguess"></h1>
-          </div>
-          <div class="col-xs-4">
-            <h1 id="Trivia">Trivia Game</h1>
-            <button id="restart">Restart</button>
-          </div>
-          <div class="col-xs-4">
-            <h1 id="scoreboard">Incorrect</h1>
-            <h1 id ="incorrectguess"></h1>
-          </div>
-        </header>
-      </div>
-      <div class="container">
-        <section class="row">
-          <div class="col-xs-12">
-            <h1 id="question1"></h2>
-            <center>  <button class="myButton" id ="firstoption"></button> </center>
-          </div>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Trivia Paradise</title>
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css"/>
+    <link rel="stylesheet" href="bootstrap.css">
+    <link rel="stylesheet" href="trivia.css">
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <header class="row jumbotron topspot">
+        <div class="col-xs-4">
+          <h1 id="scoreboard">Correct</h1>
+          <h1 id="correctguess"></h1> <!-- NHO: HTML Validator will give you a warning for empty header. Why not give it an initial value of 0 ? -->
+        </div>
+        <div class="col-xs-4">
+          <h1 id="Trivia">Trivia Game</h1> <!-- NHO: it's considered best practice to have no more than one h1 tag on the page. -->
+          <button id="restart">Restart</button>
+        </div>
+        <div class="col-xs-4">
+          <h1 id="scoreboard">Incorrect</h1> <!-- NHO: not valid HTMl with more than one element sharing the same id attribute. Considering switching to a class here -->
+          <h1 id="incorrectguess"></h1> <!-- NHO: HTML Validator will give you are warning for empty header. Why not give it an initial value of 0 ? -->
+        </div>
+      </header>
+    </div>
+    <div class="container">
+      <section class="row">
+        <div class="col-xs-12">
+          <h2 id="question1"></h2> <!-- NHO: careful with matching tags! Also would recommend a more semantic id, maybe `questionHeader` 
+          <center> <!-- NHO: center tag is obselete; how could you use CSS to align your content in the center? -->
+            <button class="myButton" id="firstoption"></button>
+          </center>
         </div>
       </section>
-      </div>
-      </div>
-      <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-      <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
-      <script src="trivia.js"></script>
-      </body>
-      </html>
+    </div>
+    <!-- NHO: deleted stray div tags -->
+    <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+    <script src="trivia.js"></script>
+  </body>
+</html>
+<!-- NHO: formatted HTML with Atom's Beautify package  -->
